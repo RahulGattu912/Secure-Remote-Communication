@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glassfish-web-app PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 3.1 Servlet 3.0//EN" "http://glassfish.org/dtds/glassfish-web-app_3_0-1.dtd">
+<glassfish-web-app error-url="">
+  <context-root>/Secure_Communication_Using_AES_test</context-root>
+  <class-loader delegate="true"/>
+  <jsp-config>
+    <property name="keepgenerated" value="true">
+      <description>Keep a copy of the generated servlet class' java code.</description>
+    </property>
+  </jsp-config>
+  <servlet>
+    <servlet-name>AES_encrypt_file</servlet-name>
+    <jsp-file>/AES_encrypt_file.jsp</jsp-file>
+    <!-- Add multipart configuration -->
+    <multipart-config>
+      <max-file-size>10485760</max-file-size>
+      <!-- Maximum file size allowed (in bytes), change as needed -->
+      <max-request-size>20971520</max-request-size>
+      <!-- Maximum request size allowed (in bytes), change as needed -->
+      <file-size-threshold>0</file-size-threshold>
+      <!-- Size threshold for storing files on disk (0 means all in memory), change as needed -->
+    </multipart-config>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AES_encrypt_file</servlet-name>
+    <url-pattern>/AES_encrypt_file.jsp</url-pattern>
+  </servlet-mapping>
+</glassfish-web-app>
